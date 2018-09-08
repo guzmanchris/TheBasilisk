@@ -2,6 +2,7 @@ package Game.GameStates;
 
 import Game.Entities.Dynamic.Player;
 import Main.Handler;
+import Resources.Images;
 import Worlds.WorldBase;
 import Worlds.WorldOne;
 
@@ -42,7 +43,8 @@ public class GameState extends State {
 
     @Override
     public void render(Graphics g) {
-
+    	
+    	g.drawImage(Images.background,0,0,handler.getWidth(),handler.getHeight(),null);
         handler.getWorld().render(g);
 
     }
