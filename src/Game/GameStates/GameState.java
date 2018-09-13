@@ -38,6 +38,10 @@ public class GameState extends State {
     public void tick() {
 
         handler.getWorld().tick();
+        
+        if(handler.getKeyManager().p){
+            State.setState(handler.getGame().pauseState);
+        }
 
     }
 
