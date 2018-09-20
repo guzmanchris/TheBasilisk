@@ -49,7 +49,7 @@ public class PauseState extends State {
         if( count>=30){
             count=30;
         }
-        if((handler.getKeyManager().pbutt) && count>=30){
+        if((handler.getKeyManager().pbutt || handler.getKeyManager().p)  && count>=30){
             count=0;
 
             State.setState(handler.getGame().gameState);
