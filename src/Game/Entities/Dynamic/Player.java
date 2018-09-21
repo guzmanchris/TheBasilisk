@@ -18,6 +18,7 @@ public class Player {
     public int xCoord;
     public int yCoord;
 
+    //Keep track of times method has been called
     public int moveCounter;
     public int ticks = 0;
     
@@ -186,7 +187,6 @@ public class Player {
             case "Left":
                 if(xCoord==0){
                     kill();
-                    State.setState(handler.getGame().gameOverState);
                 }else{
                     xCoord--;
                 }
@@ -194,7 +194,6 @@ public class Player {
             case "Right":
                 if(xCoord==handler.getWorld().GridWidthHeightPixelCount-1){
                     kill();
-                    State.setState(handler.getGame().gameOverState);
                 }else{
                     xCoord++;
                 }
@@ -202,7 +201,6 @@ public class Player {
             case "Up":
                 if(yCoord==0){
                     kill();
-                    State.setState(handler.getGame().gameOverState);
                 }else{
                     yCoord--;
                 }
@@ -210,7 +208,6 @@ public class Player {
             case "Down":
                 if(yCoord==handler.getWorld().GridWidthHeightPixelCount-1){
                     kill();
-                    State.setState(handler.getGame().gameOverState);
                 }else{
                     yCoord++;
                 }
@@ -367,6 +364,7 @@ public class Player {
 
             }
         }
+        State.setState(handler.getGame().gameOverState);
     }
 
     public boolean isJustAte() {
