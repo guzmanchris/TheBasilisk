@@ -19,7 +19,11 @@ public class Player {
     public int yCoord;
 
     public int moveCounter;
-    public int ticks;
+    public int ticks = 0;
+    
+    //Value of speedAdjust sets default speed of snake
+    public int speedAdjust = 4;
+    
 
     public String direction;//is your first name one?
 
@@ -37,9 +41,9 @@ public class Player {
     public void tick(){
         moveCounter++;
         ticks++;
-        if(moveCounter>=5) {
+        if(moveCounter>=speedAdjust) {
             checkCollisionAndMove();
-            moveCounter=1;
+            moveCounter=0;
         }
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_UP) && !(direction == "Down") ){
             direction="Up";
@@ -50,7 +54,7 @@ public class Player {
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT) && !(direction == "Left")){
             direction="Right";
         }
-        if(ticks>=10)
+        if(ticks>=10) {
 	        if(handler.getKeyManager().n) {
 	        	lenght++;
 	        	Tail tail = null;
@@ -155,8 +159,22 @@ public class Player {
 	         }
 	         handler.getWorld().body.addLast(tail);
 	         handler.getWorld().playerLocation[tail.x][tail.y] = true;
-	        ticks = 0;     
+	        ticks = 0;  
+	        }        
+        }
+        
+        if(ticks >= 30) {
+        	 
+	        if(handler.getKeyManager().plus && speedAdjust>1) {
+	        	speedAdjust--;
+	        	ticks = 0;
 	        }
+	        
+	        if(handler.getKeyManager().minus) {
+	        	speedAdjust++;
+	        	ticks = 0;
+	        }
+        }
 
     }
 
