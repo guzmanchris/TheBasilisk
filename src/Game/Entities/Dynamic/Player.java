@@ -1,5 +1,5 @@
 package Game.Entities.Dynamic;
-
+import Game.GameStates.State;
 import Main.Handler;
 
 import java.awt.*;
@@ -59,6 +59,7 @@ public class Player {
             case "Left":
                 if(xCoord==0){
                     kill();
+                    State.setState(handler.getGame().gameOverState);
                 }else{
                     xCoord--;
                 }
@@ -66,6 +67,7 @@ public class Player {
             case "Right":
                 if(xCoord==handler.getWorld().GridWidthHeightPixelCount-1){
                     kill();
+                    State.setState(handler.getGame().gameOverState);
                 }else{
                     xCoord++;
                 }
@@ -73,6 +75,7 @@ public class Player {
             case "Up":
                 if(yCoord==0){
                     kill();
+                    State.setState(handler.getGame().gameOverState);
                 }else{
                     yCoord--;
                 }
@@ -80,6 +83,7 @@ public class Player {
             case "Down":
                 if(yCoord==handler.getWorld().GridWidthHeightPixelCount-1){
                     kill();
+                    State.setState(handler.getGame().gameOverState);
                 }else{
                     yCoord++;
                 }
