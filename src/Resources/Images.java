@@ -14,11 +14,14 @@ public class Images {
     public static BufferedImage[] butstart;
     public static BufferedImage title;
     public static BufferedImage Pause;
+    public static BufferedImage[] PlayAgain;
+    public static BufferedImage[] ReturnToMenu;
     public static BufferedImage[] Resume;
     public static BufferedImage[] BTitle;
     public static BufferedImage[] Options;
     public static ImageIcon icon;
     public static BufferedImage background;
+    public static BufferedImage GameOver;
 
     public Images() {
 
@@ -26,11 +29,14 @@ public class Images {
         Resume = new BufferedImage[2];
         BTitle = new BufferedImage[2];
         Options = new BufferedImage[2];
+        PlayAgain = new BufferedImage[2];
+        ReturnToMenu = new BufferedImage[2];
 
         try {
 
             title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
             background = ImageIO.read(getClass().getResourceAsStream("/Sheets/ChamberOfSecretsBG.png"));
+            GameOver = ImageIO.read(getClass().getResourceAsStream("/Sheets/gameOver.png"));
             Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
             Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Resume.png"));
             Resume[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeP.png"));
@@ -41,7 +47,11 @@ public class Images {
             butstart[0]= ImageIO.read(getClass().getResourceAsStream("/Buttons/NormBut.png"));//normbut
             butstart[1]= ImageIO.read(getClass().getResourceAsStream("/Buttons/HoverBut.png"));//hoverbut
             butstart[2]= ImageIO.read(getClass().getResourceAsStream("/Buttons/ClickedBut.png"));//clickbut
-
+            PlayAgain[0]= ImageIO.read(getClass().getResourceAsStream("/Buttons/PlayAgain.png"));
+            PlayAgain[1]= ImageIO.read(getClass().getResourceAsStream("/Buttons/PlayAgainP.png"));
+            ReturnToMenu[0]= ImageIO.read(getClass().getResourceAsStream("/Buttons/ReturnToMenu.png"));
+            ReturnToMenu[1]= ImageIO.read(getClass().getResourceAsStream("/Buttons/ReturnToMenuP.png"));
+            
             icon =  new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/Sheets/icon.png")));
 
 
