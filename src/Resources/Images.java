@@ -34,7 +34,7 @@ public class Images {
 
         try {
 
-            title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
+            title = ImageIO.read(getClass().getResourceAsStream("/Sheets/menu.png"));
             background = ImageIO.read(getClass().getResourceAsStream("/Sheets/ChamberOfSecretsBG.png"));
             GameOver = ImageIO.read(getClass().getResourceAsStream("/Sheets/gameOver.png"));
             Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
@@ -44,9 +44,9 @@ public class Images {
             BTitle[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BTitleP.png"));
             Options[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Options.png"));
             Options[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/OptionsP.png"));
-            butstart[0]= ImageIO.read(getClass().getResourceAsStream("/Buttons/NormBut.png"));//normbut
-            butstart[1]= ImageIO.read(getClass().getResourceAsStream("/Buttons/HoverBut.png"));//hoverbut
-            butstart[2]= ImageIO.read(getClass().getResourceAsStream("/Buttons/ClickedBut.png"));//clickbut
+            butstart[0]= ImageIO.read(getClass().getResourceAsStream("/Buttons/normal.png"));//normbut
+            butstart[1]= ImageIO.read(getClass().getResourceAsStream("/Buttons/hovered.png"));//hoverbut
+            butstart[2]= ImageIO.read(getClass().getResourceAsStream("/Buttons/pressed.png"));//clickbut
             PlayAgain[0]= ImageIO.read(getClass().getResourceAsStream("/Buttons/PlayAgain.png"));
             PlayAgain[1]= ImageIO.read(getClass().getResourceAsStream("/Buttons/PlayAgainP.png"));
             ReturnToMenu[0]= ImageIO.read(getClass().getResourceAsStream("/Buttons/ReturnToMenu.png"));
