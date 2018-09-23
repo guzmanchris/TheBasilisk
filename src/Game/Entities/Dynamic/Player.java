@@ -60,11 +60,11 @@ public class Player {
        //Debugging Tools   
         if(ticks >= 10) {
         	 
-        	 if(handler.getKeyManager().n && ticks>=10) {
+        	 if(handler.getKeyManager().n) {
      	        addTail();
      	        ticks = 0;  
              }        
-	        if(handler.getKeyManager().plus && speedAdjust>1) {
+	        if((handler.getKeyManager().plus || handler.getKeyManager().equal) && speedAdjust>1) {
 	        	speedAdjust--;
 	        	ticks = 0;
 	        }
