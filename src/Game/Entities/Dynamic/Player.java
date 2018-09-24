@@ -25,6 +25,9 @@ public class Player {
     //Value of speedAdjust sets default speed of snake
     public int speedAdjust = 4;
     
+    //set initial score to 0
+    public int score = 0;
+    
 
     public String direction;//is your first name one?
 
@@ -142,8 +145,9 @@ public class Player {
 
             }
         }
-
-
+        String s = "Score: " + score;
+        g.drawString(s, 0, 10);
+        
     }
 
     public void Eat(){
@@ -252,6 +256,7 @@ public class Player {
         }
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
+        score ++;
         this.setJustAte(true);
     }
 
