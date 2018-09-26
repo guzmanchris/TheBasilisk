@@ -17,6 +17,7 @@ public class Images {
     public static BufferedImage[] PlayAgain;
     public static BufferedImage[] ReturnToMenu;
     public static BufferedImage[] Resume;
+    public static BufferedImage[] Restart;
     public static BufferedImage[] BTitle;
     public static BufferedImage[] Options;
     public static ImageIcon icon;
@@ -31,6 +32,7 @@ public class Images {
         Options = new BufferedImage[2];
         PlayAgain = new BufferedImage[2];
         ReturnToMenu = new BufferedImage[2];
+        Restart = new BufferedImage[2];
 
         try {
 
@@ -51,6 +53,8 @@ public class Images {
             PlayAgain[1]= ImageIO.read(getClass().getResourceAsStream("/Buttons/PlayAgainP.png"));
             ReturnToMenu[0]= ImageIO.read(getClass().getResourceAsStream("/Buttons/ReturnToMenu.png"));
             ReturnToMenu[1]= ImageIO.read(getClass().getResourceAsStream("/Buttons/ReturnToMenuP.png"));
+            Restart[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Restart.png"));
+            Restart[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/RestartP.png"));
             
             icon =  new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/Sheets/icon.png")));
 
