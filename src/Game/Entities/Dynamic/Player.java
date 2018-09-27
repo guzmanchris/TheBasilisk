@@ -42,7 +42,8 @@ public class Player {
 
     }
 
-    public void tick(){
+
+	public void tick(){
         moveCounter++;
         ticks++;
         if(moveCounter>=speedAdjust) {

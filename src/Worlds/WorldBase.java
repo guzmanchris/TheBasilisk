@@ -2,6 +2,8 @@ package Worlds;
 
 import Game.Entities.Dynamic.Player;
 import Game.Entities.Dynamic.Tail;
+import Game.Entities.Dynamic.PlayerOne;
+import Game.Entities.Dynamic.PlayerTwo;
 import Game.Entities.Static.Apple;
 import Main.Handler;
 
@@ -24,6 +26,8 @@ public abstract class WorldBase {
     public int GridPixelsize;
 
     public Player player;
+    public PlayerOne player1;
+    public PlayerTwo player2;
 
     protected Handler handler;
 
@@ -36,6 +40,7 @@ public abstract class WorldBase {
     public Boolean[][] playerLocation;
 
     public LinkedList<Tail> body = new LinkedList<>();
+    public LinkedList<Tail> body2 = new LinkedList<>();
 
 
     public WorldBase(Handler handler){

@@ -4,6 +4,7 @@ import Display.DisplayScreen;
 import Game.GameStates.GameOverState;
 import Game.GameStates.GameState;
 import Game.GameStates.MenuState;
+import Game.GameStates.MultiPlayerState;
 import Game.GameStates.PauseState;
 import Game.GameStates.State;
 import Input.KeyManager;
@@ -47,6 +48,7 @@ public class GameSetUp implements Runnable {
     public State menuState;
     public State pauseState;
     public State gameOverState;
+    public State multiPlayerState;
 
     //Res.music
     private InputStream audioFile;
@@ -84,6 +86,7 @@ public class GameSetUp implements Runnable {
         menuState = new MenuState(handler);
         pauseState = new PauseState(handler);
         gameOverState = new GameOverState(handler);
+        multiPlayerState = new MultiPlayerState(handler);
         State.setState(menuState);
 
         try {
@@ -161,8 +164,9 @@ public class GameSetUp implements Runnable {
         keyManager.tick();
 
         //game states are the menus
-        if(State.getState() != null)
-            State.getState().tick();
+        if(State.getState() != null) {
+                State.getState().tick();
+        }
     }
 
     private void render(){
@@ -178,8 +182,9 @@ public class GameSetUp implements Runnable {
         //Draw Here!
 
         g.drawImage(loading ,0,0,width,height,null);
-        if(State.getState() != null)
-            State.getState().render(g);
+        if(State.getState() != null) {
+                State.getState().render(g);
+        	}
 
 
         //End Drawing!
