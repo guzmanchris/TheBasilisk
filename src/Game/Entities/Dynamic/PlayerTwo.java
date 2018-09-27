@@ -26,11 +26,11 @@ public class PlayerTwo {
 
 	public PlayerTwo(Handler handler) {
 		this.handler = handler;
-        xCoord = handler.getWorld().GridWidthHeightPixelCount-5;
+        xCoord = handler.getWorld().GridWidthHeightPixelCount-10;
         yCoord = handler.getWorld().GridWidthHeightPixelCount-1;
         moveCounter = 0;
         direction= "Left";
-        length= 5;
+        length= 10;
         for(int i=1; i<length; i++) {
         	handler.getWorld().body2.add(new Tail(xCoord+i, yCoord,handler));
         }
@@ -108,7 +108,7 @@ public class PlayerTwo {
         Random r = new Random();
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-            	g.setColor(Color.BLUE);
+            	g.setColor(Color.GREEN);
 
                 if(playeLocation[i][j]){
                     g.fillRect((i*handler.getWorld().GridPixelsize),
@@ -116,14 +116,6 @@ public class PlayerTwo {
                             handler.getWorld().GridPixelsize,
                             handler.getWorld().GridPixelsize);
                 }
-                if(handler.getWorld().appleLocation[i][j]) {
-                	g.setColor(Color.RED);
-                	 g.fillRect((i*handler.getWorld().GridPixelsize),
-                             (j*handler.getWorld().GridPixelsize),
-                             handler.getWorld().GridPixelsize,
-                             handler.getWorld().GridPixelsize);
-                }
-
             }
         }
     }
@@ -238,8 +230,9 @@ public class PlayerTwo {
     
     public void removeTail() {
     	length--;
+    	if(!(handler.getWorld().body2.isEmpty())) {
     	handler.getWorld().playerLocation[handler.getWorld().body2.getLast().x][handler.getWorld().body2.getLast().y] = false;
-    	handler.getWorld().body2.removeLast();
+    	handler.getWorld().body2.removeLast();}
     }
     
     public void kill(){

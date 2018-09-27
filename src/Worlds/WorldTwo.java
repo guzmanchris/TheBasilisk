@@ -4,7 +4,9 @@ import java.awt.Graphics;
 import java.util.Random;
 
 import Game.Entities.Static.Apple;
+import Game.GameStates.State;
 import Main.Handler;
+import Game.Entities.Dynamic.*;
 
 public class WorldTwo extends WorldBase{
 	
@@ -55,6 +57,29 @@ public class WorldTwo extends WorldBase{
 			player2.Eat();
 			player1.removeTail();
 		}
+		//Not working efficiently, even when yCoords are the same method mostly fails, except on rare occations
+		if(player1.xCoord == player2.xCoord && player1.yCoord == player2.yCoord) {
+			State.setState(handler.getGame().drawState);
+		}
+		
+		if(player1.length == 0 ) {
+			State.setState(handler.getGame().p2WinsState);
+		}
+		for(int i=0; i<handler.getWorld().body2.size(); i++) {
+			if(player1.xCoord == handler.getWorld().body2.get(i).x && player1.yCoord == handler.getWorld().body2.get(i).y) {
+				State.setState(handler.getGame().p2WinsState);
+			}
+		}
+		
+		if(player2.length == 0) {
+			State.setState(handler.getGame().p1WinsState);
+		}
+		for(int i=0; i<handler.getWorld().body.size(); i++) {
+			if(player2.xCoord == handler.getWorld().body.get(i).x && player2.yCoord == handler.getWorld().body.get(i).y) {
+				State.setState(handler.getGame().p1WinsState);
+			}
+		}
+		
 	}
 
 	@Override

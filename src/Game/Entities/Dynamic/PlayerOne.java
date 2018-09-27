@@ -26,11 +26,11 @@ public class PlayerOne {
 
 	public PlayerOne(Handler handler) {
 		 this.handler = handler;
-	        xCoord = 5;
+	        xCoord = 10;
 	        yCoord = 0;
 	        moveCounter = 0;
 	        direction= "Right";
-	        length= 5;
+	        length= 10;
 	        for(int i=1; i<length; i++) {
 	        	handler.getWorld().body.add(new Tail(xCoord-i,yCoord,handler));
 	        }
@@ -237,8 +237,9 @@ public class PlayerOne {
     
     public void removeTail() {
     	length--;
+    	if(!(handler.getWorld().body.isEmpty())) {
     	handler.getWorld().playerLocation[handler.getWorld().body.getLast().x][handler.getWorld().body.getLast().y] = false;
-    	handler.getWorld().body.removeLast();
+    	handler.getWorld().body.removeLast();}
     }
     
     public void kill(){

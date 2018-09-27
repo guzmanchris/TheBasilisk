@@ -23,6 +23,9 @@ public class Images {
     public static ImageIcon icon;
     public static BufferedImage background;
     public static BufferedImage GameOver;
+    public static BufferedImage P1Wins;
+    public static BufferedImage P2Wins;
+    public static BufferedImage Draw;
 
     public Images() {
 
@@ -40,6 +43,9 @@ public class Images {
             background = ImageIO.read(getClass().getResourceAsStream("/Sheets/ChamberOfSecretsBG.png"));
             GameOver = ImageIO.read(getClass().getResourceAsStream("/Sheets/gameOver.png"));
             Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
+            P1Wins = ImageIO.read(getClass().getResourceAsStream("/Sheets/p1wins.png"));
+            P2Wins = ImageIO.read(getClass().getResourceAsStream("/Sheets/p2wins.png"));
+            Draw = ImageIO.read(getClass().getResourceAsStream("/Sheets/draw.png"));
             Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Resume.png"));
             Resume[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeP.png"));
             BTitle[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BTitle.png"));

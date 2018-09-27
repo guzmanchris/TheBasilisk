@@ -1,10 +1,13 @@
 package Main;
 
 import Display.DisplayScreen;
+import Game.GameStates.DrawState;
 import Game.GameStates.GameOverState;
 import Game.GameStates.GameState;
 import Game.GameStates.MenuState;
 import Game.GameStates.MultiPlayerState;
+import Game.GameStates.P1WinsState;
+import Game.GameStates.P2WinsState;
 import Game.GameStates.PauseState;
 import Game.GameStates.State;
 import Input.KeyManager;
@@ -49,6 +52,9 @@ public class GameSetUp implements Runnable {
     public State pauseState;
     public State gameOverState;
     public State multiPlayerState;
+    public State p1WinsState;
+    public State p2WinsState;
+    public State drawState;
 
     //Res.music
     private InputStream audioFile;
@@ -87,6 +93,10 @@ public class GameSetUp implements Runnable {
         pauseState = new PauseState(handler);
         gameOverState = new GameOverState(handler);
         multiPlayerState = new MultiPlayerState(handler);
+        p1WinsState = new P1WinsState(handler);
+        p2WinsState = new P2WinsState(handler);
+        drawState = new DrawState(handler);
+        
         State.setState(menuState);
 
         try {
@@ -110,6 +120,10 @@ public class GameSetUp implements Runnable {
 
     public void reStart(){
         gameState = new GameState(handler);
+    }
+    
+    public void multRestart() {
+    	multiPlayerState = new MultiPlayerState(handler);
     }
 
     public synchronized void start(){
