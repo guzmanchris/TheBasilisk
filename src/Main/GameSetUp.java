@@ -4,6 +4,7 @@ import Display.DisplayScreen;
 import Game.GameStates.DrawState;
 import Game.GameStates.GameOverState;
 import Game.GameStates.GameState;
+import Game.GameStates.HowToPlayState;
 import Game.GameStates.MenuState;
 import Game.GameStates.MultiPlayerState;
 import Game.GameStates.P1WinsState;
@@ -55,6 +56,7 @@ public class GameSetUp implements Runnable {
     public State p1WinsState;
     public State p2WinsState;
     public State drawState;
+    public State howToPlayState;
 
     //Res.music
     private InputStream audioFile;
@@ -96,6 +98,7 @@ public class GameSetUp implements Runnable {
         p1WinsState = new P1WinsState(handler);
         p2WinsState = new P2WinsState(handler);
         drawState = new DrawState(handler);
+        howToPlayState = new HowToPlayState(handler);
         
         State.setState(menuState);
 

@@ -48,6 +48,7 @@ public class WorldTwo extends WorldBase{
             appleXandY[0] = appleX;
             appleXandY[1] = appley;
             }
+				
 		if(player1.xCoord == appleXandY[0] && player1.yCoord == appleXandY[1] && ticks>=player1.defaultSpeed) {
 			player1.Eat();
 			player2.removeTail();
@@ -57,6 +58,7 @@ public class WorldTwo extends WorldBase{
 			player2.Eat();
 			player1.removeTail();
 		}
+		
 		//Not working efficiently, even when yCoords are the same method mostly fails, except on rare occations
 		if(player1.xCoord == player2.xCoord && player1.yCoord == player2.yCoord) {
 			State.setState(handler.getGame().drawState);
@@ -79,7 +81,6 @@ public class WorldTwo extends WorldBase{
 				State.setState(handler.getGame().p1WinsState);
 			}
 		}
-		
 	}
 
 	@Override

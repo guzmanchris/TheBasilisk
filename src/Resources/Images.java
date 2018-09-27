@@ -20,12 +20,15 @@ public class Images {
     public static BufferedImage[] Restart;
     public static BufferedImage[] BTitle;
     public static BufferedImage[] Options;
+    public static BufferedImage[] HowToPlay;
+    public static BufferedImage[] challengeAFriend;
     public static ImageIcon icon;
     public static BufferedImage background;
     public static BufferedImage GameOver;
     public static BufferedImage P1Wins;
     public static BufferedImage P2Wins;
     public static BufferedImage Draw;
+    public static BufferedImage HowToPlayScreen;
 
     public Images() {
 
@@ -36,6 +39,9 @@ public class Images {
         PlayAgain = new BufferedImage[2];
         ReturnToMenu = new BufferedImage[2];
         Restart = new BufferedImage[2];
+        HowToPlay = new BufferedImage[2];
+        challengeAFriend = new BufferedImage[2];
+        
 
         try {
 
@@ -46,6 +52,7 @@ public class Images {
             P1Wins = ImageIO.read(getClass().getResourceAsStream("/Sheets/p1wins.png"));
             P2Wins = ImageIO.read(getClass().getResourceAsStream("/Sheets/p2wins.png"));
             Draw = ImageIO.read(getClass().getResourceAsStream("/Sheets/draw.png"));
+            HowToPlayScreen = ImageIO.read(getClass().getResourceAsStream("/Sheets/howToPlayScreen.png"));
             Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Resume.png"));
             Resume[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeP.png"));
             BTitle[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BTitle.png"));
@@ -61,6 +68,10 @@ public class Images {
             ReturnToMenu[1]= ImageIO.read(getClass().getResourceAsStream("/Buttons/ReturnToMenuP.png"));
             Restart[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Restart.png"));
             Restart[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/RestartP.png"));
+            HowToPlay[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/howtoPlay.png"));
+            HowToPlay[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/howtoPlayP.png"));
+            challengeAFriend[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/challenge.png"));
+            challengeAFriend[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/challengeP.png"));
             
             icon =  new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/Sheets/icon.png")));
 
